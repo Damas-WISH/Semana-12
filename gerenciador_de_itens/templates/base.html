@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Gerenciador de Itens{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Gerenciador de Itens</h1>
+        <p class="tag">CRUD simples com FastAPI + Jinja2</p>
+      </div>
+      <nav class="nav">
+        <a href="/">Início</a>
+        <a href="/novo" class="btn small">Novo Item</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container main-content">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <small>Desenvolvido para atividade - FastAPI + Jinja2 • Gerenciador de Itens</small>
+    </div>
+  </footer>
+</body>
+</html>

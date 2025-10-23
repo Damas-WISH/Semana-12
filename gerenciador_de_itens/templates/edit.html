@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Editar Item{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Editar Item</h2>
+  <form action="/atualizar/{{ item.id }}" method="post" class="form">
+    <label>Nome:</label>
+    <input type="text" name="nome" value="{{ item.nome }}" required maxlength="100" />
+    <label>Descrição:</label>
+    <textarea name="descricao" rows="5" required>{{ item.descricao }}</textarea>
+    <div class="form-actions">
+      <button class="btn" type="submit">Atualizar</button>
+      <a href="/" class="btn ghost">Cancelar</a>
+    </div>
+  </form>
+</section>
+{% endblock %}

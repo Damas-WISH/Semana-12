@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Lista de Itens{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Itens Cadastrados</h2>
+  {% if itens %}
+  <div class="table-wrap">
+    <table class="items-table">
+      <thead>
+        <tr><th>ID</th><th>Nome</th><th>Descrição</th><th>Ações</th></tr>
+      </thead>
+      <tbody>
+      {% for item in itens %}
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.nome }}</td>
+          <td>{{ item.descricao }}</td>
+          <td class="actions">
+            <a href="/editar/{{ item.id }}" class="btn ghost">Editar</a>
+            <a href="/deletar/{{ item.id }}" class="btn danger" onclick="return confirm('Excluir item {{ item.nome }}?');">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+    <p class="muted">Nenhum item cadastrado ainda. Clique em <strong>Novo Item</strong> para criar.</p>
+  {% endif %}
+</section>
+{% endblock %}
